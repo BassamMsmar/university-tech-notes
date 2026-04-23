@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطوير التطبيقات 2 - البوابة الأكاديمية</title>
+    <meta name="description" content="دليل الطالب للانطلاقة في تطوير تطبيقات الويب باستخدام البنية التحتية Backend وإطار عمل Django.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="header-title">البوابة الأكاديمية</div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a> <span>/</span> المقرر الدراسي
+            </div>
+            <h1>تطوير التطبيقات 2</h1>
+            <p class="course-subtitle">تطوير تطبيقات الويب باستخدام إطار عمل Django (الواجهة الخلفية)</p>
+        </div>
+    </div>
+
+    <main class="container content-wrapper">
+        <aside>
+            <div class="toc">
+                <h3>محتويات المقرر</h3>
+                <ul>
+                    <li><a href="#intro">مقدمة في الواجهة الخلفية</a></li>
+                    <li><a href="#git">التحكم بالإصدارات (Git)</a></li>
+                    <li><a href="#venv">البيئة الافتراضية</a></li>
+                    <li><a href="#django">لماذا Django ومميزاته</a></li>
+                    <li><a href="#mvt">آلية عمل Django (MVT)</a></li>
+                    <li><a href="#db">قاعدة البيانات وإدارة النظام</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="course-content">
+            <h2 id="intro">مقدمة في الواجهة الخلفية (Back-End)</h2>
+            <p>كما تم دراسته في المقرر السابق، تتكون تطبيقات الويب من واجهة أمامية (Front-End) وواجهة خلفية (Back-End). الواجهة الخلفية هي الجزء الذي لا يراه المستخدم، ولكنه العصب الأساسي الذي يقوم بمعالجة البيانات وتخزينها وتأمينها.</p>
+            
+            <div class="info-box example">
+                <strong>مثال واقعي:</strong> عند تسجيل الدخول إلى موقع الجامعة، الواجهة الأمامية هي النموذج الذي تكتب فيه الرقم الجامعي وكلمة المرور، أما الواجهة الخلفية فهي النظام الذي يتحقق من صحة هذه البيانات في قاعدة البيانات ويمنحك حق الدخول.
+            </div>
+
+            <h2 id="git">التحكم بالإصدارات (Git و GitHub)</h2>
+            <p>يعتبر <strong>Git</strong> نظاماً للتحكم بالإصدارات يُستخدم لحفظ تاريخ وتطور المشروع، بحيث يمكن للمطور الرجوع إلى أي نسخة سابقة. أما <strong>GitHub</strong> فهو المنصة السحابية التي يتم رفع المشروع عليها للتعاون أو حفظه على الإنترنت.</p>
+            <ul>
+                <li><strong>Git:</strong> يمثل زر الانقاذ (حفظ) المستمر لتغيرات الشفرة المصدرية.</li>
+                <li><strong>GitHub:</strong> يمثل الخزنة السحابية التي تحمي المشروع وتشاركه.</li>
+            </ul>
+            
+            <h3>الأوامر الأساسية:</h3>
+            <pre><code>git init              // لإنشاء مستودع جديد في المشروع
+git add .             // لإضافة كافة الملفات والتعديلات
+git commit -m "msg"   // لتوثيق وحفظ التغييرات
+git push              // لرفع التغييرات إلى الخادم السحابي</code></pre>
+
+            <h2 id="venv">البيئة الافتراضية (Virtual Environment)</h2>
+            <p>البيئة الافتراضية (venv) هي مساحة عمل معزولة لكل مشروع برمجي، تضمن عدم تداخل المكتبات وإصداراتها بين المشاريع المختلفة على نفس الجهاز.</p>
+            <p>على سبيل المثال، إذا كان لديك مشروع يستخدم Django إصدار 3 ومشروع آخر يستخدم الإصدار 5، ستحدث تعارضات إن لم يتم عزل كل مشروع ببيئته الخاصة.</p>
+            
+            <h3>أوامر البيئة الافتراضية:</h3>
+            <pre><code>python -m venv venv  // إنشاء بيئة افتراضية جديدة باسم venv
+venv\Scripts\activate // تفعيل البيئة (في نظام ويندوز)
+deactivate           // إيقاف عمل البيئة الافتراضية</code></pre>
+
+            <h2 id="django">لماذا Django ومميزاته؟</h2>
+            <p>إطار <strong>Django</strong> هو إطار عمل بلغة Python جاهز ومزود بأدوات قوية تساعد على بناء تطبيقات الويب بسرعة وموثوقية.</p>
+            <ul>
+                <li><strong>يقلل كتابة الكود:</strong> يوفر حلولاً جاهزة للمشاكل الشائعة.</li>
+                <li><strong>عالي الأمان:</strong> يحمي التطبيق تلقائياً من العديد من الثغرات الأمنية مثل حقن قواعد البيانات.</li>
+                <li><strong>لوحة تحكم إدارية:</strong> يقوم بتوليد لوحة تحكم كاملة وجاهزة فورياً لإدارة محتوى الموقع.</li>
+            </ul>
+            <p>شركات عالمية تعتمد على إطار Django في بنيتها التحتية مثل <strong>Instagram</strong> و <strong>Pinterest</strong>.</p>
+
+            <h2 id="mvt">آلية عمل Django وتنظيم الملفات</h2>
+            <p>يتكون المشروع في Django من مشروع رئيسي يضم إعدادات النظام، ويحتوي على عدة تطبيقات فرعية صغيرة (Apps) كل منها ينجز مهمة محددة.</p>
+            
+            <h3>معمارية MVT (Model - View - Template)</h3>
+            <p>يعتمد إطار Django على هيكلية تنظيمية تفصل مكونات التطبيق كالتالي:</p>
+            <ul>
+                <li><strong>Model (النموذج):</strong> المكون المسؤول عن تمثيل البيانات المهيكلة والتعامل مع قاعدة البيانات.</li>
+                <li><strong>View (العرض):</strong> المكون الذي يحتوي على المنطق البرمجي، فهو يستقبل طلب المستخدم ويعالج البيانات عبر استدعاء النموذج المناسب.</li>
+                <li><strong>Template (القالب):</strong> يمثل ملفات HTML المسؤولة عن عرض واجهة المستخدم النهائية بعد تمرير البيانات إليها.</li>
+                <li><strong>URL (المسارات):</strong> نظام التوجيه الذي يربط الرابط المطلوب بدالة الـ View المناسبة.</li>
+            </ul>
+
+            <h2 id="db">قاعدة البيانات وإدارة النظام</h2>
+            <h3>قاعدة البيانات SQLite3</h3>
+            <p>يأتي Django محملاً بقاعدة بيانات <strong>SQLite3</strong> افتراضياً. تتميز بكونها ملفية ولا تحتاج إلى برنامج تثبيت خوادم معقدة، مما يجعلها مثالية لبيئة التطوير والتعلم.</p>
+            
+            <h3>حساب المدير (Superuser)</h3>
+            <p>للدخول إلى النظام كمستخدم إداري بكامل الصلاحيات، يتم إنشاء هذا الحساب باستخدام أمر برمجي. هذا الحساب يستطيع التحكم الكامل بالبيانات والمستخدمين من خلال لوحة تحكم Django الجاهزة.</p>
+            
+            <div class="info-box example">
+                <strong>أوامر Django الهامة:</strong>
+<pre><code>django-admin startproject projectname // لإنشاء مشروع جديد
+python manage.py startapp appname     // لإنشاء تطبيق فرعي
+python manage.py makemigrations       // لتسجيل تغييرات قاعدة البيانات
+python manage.py migrate              // لتطبيق التغييرات على قاعدة البيانات
+python manage.py createsuperuser      // لإنشاء مدير نظام
+python manage.py runserver            // لتشغيل السيرفر ورؤية النتيجة</code></pre>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; البوابة الأكاديمية للطلاب</p>
+        </div>
+    </footer>
+</body>
+</html>

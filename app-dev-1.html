@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطوير التطبيقات 1 - البوابة الأكاديمية</title>
+    <meta name="description" content="ملخص مقرر تطوير التطبيقات 1: أساسيات الواجهات الأمامية.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="header-title">البوابة الأكاديمية</div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a> <span>/</span> المقرر الدراسي
+            </div>
+            <h1>تطوير التطبيقات 1</h1>
+            <p class="course-subtitle">مقدمة في بناء واجهات المستخدم الأمامية (Front-End Development)</p>
+        </div>
+    </div>
+
+    <main class="container content-wrapper">
+        <aside>
+            <div class="toc">
+                <h3>محتويات المقرر</h3>
+                <ul>
+                    <li><a href="#intro">مقدمة في الويب</a></li>
+                    <li><a href="#html">أساسيات هيكلة الصفحات (HTML)</a></li>
+                    <li><a href="#css">التصميم والتنسيق (CSS)</a></li>
+                    <li><a href="#js">التفاعل مع المستخدم (JavaScript)</a></li>
+                    <li><a href="#responsive">التصميم المتجاوب</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="course-content">
+            <h2 id="intro">مقدمة في الويب</h2>
+            <p>يعتبر الويب المنصة الأساسية في العصر الحديث لتقديم التطبيقات وتوصيل المعلومات. يتكون أي تطبيق ويب قياسي من جانبين: الواجهة الأمامية (Front-End) وهي ما يتفاعل معه المستخدم، والواجهة الخلفية (Back-End) المسؤولة عن معالجة البيانات.</p>
+            <p>يركز هذا المقرر حصراً على تقنيات الواجهة الأمامية والتي تشكل اللبنة الأساسية لأي مطور تطبيقات.</p>
+            
+            <div class="info-box">
+                <strong>ملاحظة هامة:</strong> تعمل المتصفحات (مثل Google Chrome و Safari) كمترجمات لهذه التقنيات، حيث تستقبل الملفات من الخادم وتقوم بعرضها للمستخدم بشكل مرئي.
+            </div>
+
+            <h2 id="html">أساسيات هيكلة الصفحات (HTML)</h2>
+            <p>لغة ترميز النص الفائق (Hypertext Markup Language) هي البنية التحتية لأي صفحة ويب. تستخدم HTML سلسلة من العناصر (Tags) لتغليف أجزاء مختلفة من المحتوى لجعلها تبدو أو تتصرف بطريقة معينة.</p>
+            <h3>المكونات الأساسية</h3>
+            <ul>
+                <li><strong>العناوين (Headings):</strong> تستخدم لعناوين الأقسام الرئيسية والفرعية، من <code>h1</code> إلى <code>h6</code>.</li>
+                <li><strong>الفقرات (Paragraphs):</strong> عنصر <code>p</code> مخصص للنصوص الطويلة.</li>
+                <li><strong>الروابط (Links):</strong> عنصر <code>a</code> ينشئ روابط للانتقال بين الصفحات.</li>
+                <li><strong>التقسيمات (Divisions):</strong> عنصر <code>div</code> يستخدم كحاوية لتجميع العناصر معاً.</li>
+            </ul>
+            
+            <div class="info-box example">
+                <strong>مثال تطبيقي: الهيكل الأساسي</strong>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;تطبيق الويب الأول&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;مرحبا بك في تطوير التطبيقات&lt;/h1&gt;
+    &lt;p&gt;هذه فقرة نصية بسيطة داخل صفحة الويب.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <h2 id="css">التصميم والتنسيق (CSS)</h2>
+            <p>لغة أوراق الأنماط المتتالية (Cascading Style Sheets) هي المسؤولة عن المظهر الخارجي للصفحة. تستطيع من خلالها التحكم بالألوان، الخطوط، التباعد، ومواضع العناصر.</p>
+            <h3>الخواص الشائعة</h3>
+            <ul>
+                <li><strong>اللون (color):</strong> تحديد لون النص.</li>
+                <li><strong>الخلفية (background-color):</strong> تحديد لون أو صورة خلفية العنصر.</li>
+                <li><strong>الهوامش (margin & padding):</strong> التحكم في المسافات داخل وخارج إطار العنصر.</li>
+            </ul>
+
+            <div class="info-box example">
+                <strong>مثال تطبيقي: تطبيق الاستايل</strong>
+<pre><code>body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #002855;
+    text-align: center;
+}</code></pre>
+            </div>
+
+            <h2 id="js">التفاعل مع المستخدم (JavaScript)</h2>
+            <p>تستخدم لغة البرمجة JavaScript لجعل صفحات الويب ديناميكية وتفاعلية. يمكنها تغيير محتوى HTML أو أنماط CSS بناءً على أفعال المستخدم، مثل النقر على زر أو تعبئة نموذج.</p>
+            <h3>مفهوم DOM</h3>
+            <p>يمثل نموذج كائن المستند (Document Object Model) بنية صفحة الويب على شكل شجرة. يمكن لـ JavaScript قراءة هذه الشجرة والتعديل عليها في الوقت الفعلي.</p>
+            
+            <div class="info-box example">
+                <strong>مثال تطبيقي: تغيير محتوى عنصر</strong>
+<pre><code>// التأشير على عنصر وتغيير النص الموجود بداخله
+let titleElement = document.querySelector('h1');
+titleElement.textContent = "تم تغيير النص بواسطة جافا سكربت";</code></pre>
+            </div>
+
+            <h2 id="responsive">التصميم المتجاوب (Responsive Design)</h2>
+            <p>نظراً لتعدد أحجام الشاشات التي يستخدمها الأشخاص (حواسيب مكتبية، أجهزة لوحية، هواتف ذكية)، أصبح التصميم المتجاوب مطلباً أساسياً.</p>
+            <ul>
+                <li><strong>استعلامات الوسائط (Media Queries):</strong> تستخدم في CSS لتطبيق أنماط مختلفة بناءً على عرض شاشة الجهاز.</li>
+                <li><strong>الشبكات المرنة (Flexbox & Grid):</strong> تقنيات تتيح ترتيب العناصر بشكل مرن يملأ المساحات المتاحة بذكاء.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; البوابة الأكاديمية للطلاب</p>
+        </div>
+    </footer>
+</body>
+</html>

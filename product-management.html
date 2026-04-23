@@ -1,118 +1,148 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدارة المنتجات الرقمية - البوابة الأكاديمية</title>
-    <meta name="description" content="ملخص مقرر أدوات تطوير وإدارة المنتجات الرقمية، يشمل دورة حياة المنتج وتصميم التجربة والإطلاق.">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة المنتجات الرقمية</title>
+  <meta name="description" content="ملخص موسع لمادة إدارة المنتجات الرقمية مع أمثلة وتدريبات ومصادر.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="header-title">البوابة الأكاديمية</div>
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="course-header">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">الرئيسية</a> <span>/</span> المقرر الدراسي
-            </div>
-            <h1>إدارة المنتجات الرقمية</h1>
-            <p class="course-subtitle">أدوات ومنهجيات تطوير المنتجات الرقمية</p>
-        </div>
+  <header>
+    <div class="container header-content">
+      <div class="header-title">البوابة الأكاديمية لطلاب الحاسبات</div>
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+      </ul>
     </div>
+  </header>
 
-    <main class="container content-wrapper">
-        <aside>
-            <div class="toc">
-                <h3>محتويات المقرر</h3>
-                <ul>
-                    <li><a href="#lec1">مقدمة في المنتجات الرقمية</a></li>
-                    <li><a href="#lec2">توليد الأفكار</a></li>
-                    <li><a href="#lec3">تحليل السوق والمنافسين</a></li>
-                    <li><a href="#lec4">تصميم تجربة المستخدم (UX)</a></li>
-                    <li><a href="#lec5">تصميم واجهة المستخدم (UI)</a></li>
-                    <li><a href="#lec6">إدارة المشروع والمهام</a></li>
-                    <li><a href="#lec7">بناء النموذج الأولي</a></li>
-                    <li><a href="#lec8">اختبار المستخدم</a></li>
-                    <li><a href="#lec9">أدوات التسويق الرقمي</a></li>
-                    <li><a href="#lec10">إطلاق المنتج ومتابعته</a></li>
-                </ul>
-            </div>
-        </aside>
+  <section class="course-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">الرئيسية</a> / المقرر الدراسي</div>
+      <h1>إدارة المنتجات الرقمية</h1>
+      <p class="course-subtitle">من اكتشاف المشكلة إلى بناء المنتج، اختباره، إطلاقه، وقياس نجاحه.</p>
+    </div>
+  </section>
 
-        <section class="course-content">
-            <h2 id="lec1">مقدمة في المنتجات الرقمية</h2>
-            <img src="https://placehold.co/1200x400/002855/FFFFFF/png?text=Digital+Product+Management" alt="إدارة المنتجات الرقمية" class="course-img">
-            <p>المنتجات الرقمية هي الحلول التي نستخدمها في حياتنا اليومية عبر التقنية وتشمل تطبيقات الهواتف الذكية، مواقع الويب، المنصات التعليمية، وأدوات البرمجيات كخدمة (SaaS). تتضمن دورة حياة المنتج الرقمي عدة مراحل تبدأ من الفكرة الأولية، مروراً بالتطوير والتصميم، وصولاً للنشر والتحديث المستمر.</p>
+  <main class="container content-wrapper">
+    <aside>
+      <nav class="toc">
+        <h3>محتويات المادة</h3>
+        <ul>
+          <li><a href="#idea">فكرة المادة</a></li>
+          <li><a href="#product">المنتج الرقمي</a></li>
+          <li><a href="#lifecycle">دورة الحياة</a></li>
+          <li><a href="#ideas">توليد الأفكار</a></li>
+          <li><a href="#market">تحليل السوق</a></li>
+          <li><a href="#uxui">UX وUI</a></li>
+          <li><a href="#agile">Agile وKanban</a></li>
+          <li><a href="#metrics">القياس</a></li>
+          <li><a href="#sources">المصادر</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-            <h2 id="lec2">توليد الأفكار وأدوات العصف الذهني</h2>
-            <p>يعتبر توليد الأفكار حجر الزاوية للمنتجات المبتكرة. يتم الاعتماد على أساليب تزيد من الإبداع مثل:</p>
-            <ul>
-                <li><strong>العصف الذهني:</strong> جلسات جماعية لإنتاج أكبر عدد ممكن من الأفكار.</li>
-                <li><strong>الخرائط الذهنية:</strong> تنظيم مرئي للأفكار لتوضيح العلاقات بينها باستخدام أدوات مثل Miro و XMind.</li>
-                <li><strong>تحليل SWOT:</strong> لتقييم نقاط القوة (Strengths)، الضعف (Weaknesses)، الفرص (Opportunities)، والتهديدات (Threats).</li>
-            </ul>
+    <section class="course-content">
+      <h2 id="idea">فكرة المادة</h2>
+      <p class="lead">إدارة المنتجات الرقمية تشرح كيف ننتقل من فكرة تقنية إلى منتج يستخدمه الناس ويحقق قيمة. دور مدير المنتج هو الربط بين المستخدم، الفريق التقني، وأهداف المؤسسة.</p>
 
-            <h2 id="lec3">تحليل السوق والمنافسين</h2>
-            <p>الفهم العميق للسوق وللمنافسين يساعد على تجنب المخاطر وتحديد الفرص. نعتمد في هذا الجانب على أدوات متقدمة مثل:</p>
-            <ul>
-                <li><strong>Google Trends:</strong> قياس اهتمام الجمهور بكلمات مفتاحية معينة زمنياً.</li>
-                <li><strong>SimilarWeb:</strong> تحليلات مفصلة للزيارات ومصادر المرور لمواقع المنافسين.</li>
-                <li><strong>SEMrush:</strong> تحليل استراتيجيات الإعلانات والكلمات المفتاحية التنافسية.</li>
-            </ul>
+      <h2 id="product">ما هو المنتج الرقمي؟</h2>
+      <p>المنتج الرقمي هو حل يقدم قيمة من خلال البرمجيات. ليس مجرد كود، بل تجربة كاملة تبدأ من مشكلة المستخدم وتنتهي بنتيجة مفيدة له.</p>
+      <div class="definition"><strong>تعريفات:</strong> Persona وصف لنوع من المستخدمين. Value Proposition الوعد الذي يقدمه المنتج. MVP أقل نسخة قابلة للاستخدام لاختبار الفكرة. Roadmap خريطة اتجاهات المنتج.</div>
+      <div class="note"><strong>تقريب المفهوم:</strong> تطبيق الجامعة الناجح ليس صفحات فقط، بل قدرة الطالب على التسجيل ومعرفة جدوله ودرجاته بسهولة وبدون ارتباك.</div>
 
-            <h2 id="lec4">تصميم تجربة المستخدم (UX)</h2>
-            <p>تركز تجربة المستخدم على جعل المنتج سلساً وممتعاً للاستخدام. تتضمن رحلة تصميم تجربة المستخدم أربع خطوات أساسية:</p>
-            <ol>
-                <li><strong>البحث:</strong> فهم الجمهور واحتياجاتهم.</li>
-                <li><strong>هيكلة المعلومات:</strong> ترتيب المحتوى منطقياً.</li>
-                <li><strong>الرسومات الأولية (Wireframes):</strong> رسم الهيكل المبدئي للتطبيق.</li>
-                <li><strong>الاختبار:</strong> التقييم مع المستخدمين.</li>
-            </ol>
-            <p>تستخدم أدوات مثل <strong>Figma</strong> لبناء الرسومات وتدفقات المستخدمين (User flows).</p>
+      <h2 id="lifecycle">دورة حياة المنتج الرقمي</h2>
+      <ol>
+        <li>اكتشاف المشكلة.</li>
+        <li>دراسة المستخدمين والسوق.</li>
+        <li>توليد الحلول.</li>
+        <li>بناء MVP.</li>
+        <li>اختبار المنتج.</li>
+        <li>الإطلاق.</li>
+        <li>القياس والتحسين المستمر.</li>
+      </ol>
+      <div class="example"><strong>مثال:</strong> إذا لاحظت الجامعة أن الطلاب ينسون مواعيد الاختبارات، يمكن بناء MVP بسيط يعرض الاختبارات القادمة ويرسل تنبيها قبل بناء نظام كبير.</div>
 
-            <h2 id="lec5">تصميم واجهة المستخدم (UI)</h2>
-            <p>بعد الهيكلة ينتقل المصممون إلى الجانب البصري، وهو ما يعرف بواجهة المستخدم (UI)، وتتألف الواجهة الجيدة من:</p>
-            <ul>
-                <li><strong>الألوان والخطوط:</strong> اختيار هوية بصرية تعكس طابع المنتج الرقمي.</li>
-                <li><strong>التنسيق:</strong> وضع العناصر بطريقة جمالية ومريحة للعين.</li>
-            </ul>
+      <h2 id="ideas">توليد الأفكار</h2>
+      <p>الفكرة الجيدة لا تظهر دائما فجأة؛ يمكن إنتاجها بأدوات منظمة تساعد الفريق على رؤية المشكلة من أكثر من زاوية.</p>
+      <div class="key-grid">
+        <div class="mini-card"><strong>Brainstorming</strong><br>توليد أكبر عدد من الأفكار دون تقييم مبكر.</div>
+        <div class="mini-card"><strong>Mind Map</strong><br>ربط الأفكار بصريا حول مشكلة مركزية.</div>
+        <div class="mini-card"><strong>SCAMPER</strong><br>أسئلة لتعديل الفكرة: نبدل، ندمج، نحذف، نعكس.</div>
+        <div class="mini-card"><strong>SWOT</strong><br>تحليل القوة والضعف والفرص والتهديدات.</div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>SWOT لتطبيق حضور جامعي</th><th>مثال</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>القوة</td><td>يقلل التوقيع الورقي</td></tr>
+          <tr><td>الضعف</td><td>يحتاج اتصال إنترنت</td></tr>
+          <tr><td>الفرصة</td><td>ربطه بنظام شؤون الطلاب</td></tr>
+          <tr><td>التهديد</td><td>مقاومة بعض المستخدمين للتغيير</td></tr>
+        </tbody>
+      </table>
 
-            <h2 id="lec6">إدارة المشروع والمهام</h2>
-            <p>عملية تطوير المنتج الرقمي تتطلب تنظيم الجهد المشترك للفريق المطور، ولذلك يتم استخدام منهجيات حديثة:</p>
-            <ul>
-                <li><strong>Agile:</strong> منهجية تتسم بالمرونة والتكيف السريع.</li>
-                <li><strong>Scrum:</strong> تقسيم العمل لفترات قصيرة (Sprints).</li>
-                <li><strong>Kanban:</strong> لوحة مسار للمهام توضح (قيد التنفيذ / مكتمل).</li>
-            </ul>
-            <p>من أشهر أدوات الإدارة المستخدمة <strong>Trello</strong> و <strong>Jira</strong> و <strong>Notion</strong>.</p>
+      <h2 id="market">تحليل السوق والمنافسين</h2>
+      <p>قبل بناء المنتج يجب أن نسأل: من لديه المشكلة؟ ما الحلول الموجودة؟ لماذا سيختار المستخدم منتجنا؟ تحليل السوق يشبه فحص الخريطة قبل السفر.</p>
+      <ul>
+        <li><strong>Google Trends:</strong> معرفة اتجاه الاهتمام بكلمات معينة.</li>
+        <li><strong>Similarweb:</strong> تقدير مصادر زيارات المواقع المنافسة.</li>
+        <li><strong>مقابلات المستخدمين:</strong> فهم المشكلة من كلام المستخدم لا من تخمين الفريق.</li>
+        <li><strong>تحليل المراجعات:</strong> قراءة تعليقات المستخدمين في المتاجر لمعرفة الألم المتكرر.</li>
+      </ul>
 
-            <h2 id="lec7">بناء النموذج الأولي (Prototype)</h2>
-            <p>يختلف النموذج الأولي (Prototype) عن الرسم المبدئي (Wireframe) بأنه يضيف روح التفاعل للمشروع وكأنه تطبيق حقيقي متكامل قابل للاستخدام، مما يسمح بتجربة انتقالات الشاشات. يتم تصميمه عبر Figma Prototype.</p>
+      <h2 id="uxui">UX وUI</h2>
+      <p><strong>UX</strong> تعني كيف يشعر المستخدم أثناء استخدام المنتج: هل يفهم؟ هل ينجز المهمة؟ هل يتعطل؟ أما <strong>UI</strong> فتهتم بما يراه المستخدم: الألوان، الخطوط، الأيقونات، الأزرار، والجداول.</p>
+      <div class="note"><strong>سؤال UX مهم:</strong> لا تسأل فقط هل الشاشة جميلة؟ اسأل هل الطالب يستطيع إنجاز المهمة دون مساعدة؟</div>
+      <pre><code>فتح التطبيق -> تسجيل الدخول -> اختيار مقرر -> عرض الواجبات -> تسليم الواجب -> رسالة نجاح</code></pre>
+      <pre><code>.alert-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 12px;
+  border-radius: 8px;
+}</code></pre>
 
-            <h2 id="lec8">اختبار المستخدم (User Testing)</h2>
-            <p>التأكد من خلو المنتج من المشاكل وصعوبات الاستخدام قبل إطلاقه للجمهور. يساعد هذا الاختبار في تقليل التكاليف وزيادة رضا المستخدمين. ويمكن جمع الملاحظات باستخدام أدوات مثل استبيانات Google أو مراقبة الاستخدام الفعلي عبر Maze.</p>
+      <h2 id="agile">Agile وScrum وKanban</h2>
+      <p>المنتجات الرقمية تتغير باستمرار، لذلك نحتاج طريقة عمل تسمح بالتجربة والتعديل.</p>
+      <ul>
+        <li><strong>Agile:</strong> تفكير مرن يعتمد على التسليم المتكرر والتعلم من التغذية الراجعة.</li>
+        <li><strong>Scrum:</strong> إطار عمل يقسم العمل إلى Sprints قصيرة.</li>
+        <li><strong>Kanban:</strong> لوحة تعرض تدفق العمل من المطلوب إلى قيد التنفيذ إلى منجز.</li>
+      </ul>
+      <table>
+        <thead><tr><th>المطلوب</th><th>قيد التنفيذ</th><th>منجز</th></tr></thead>
+        <tbody><tr><td>صفحة تسجيل الدخول</td><td>نموذج الطالب</td><td>إعداد قاعدة البيانات</td></tr></tbody>
+      </table>
 
-            <h2 id="lec9">أدوات التسويق الرقمي</h2>
-            <p>إطلاق منتج ممتاز غير كافٍ بلا تسويق، ولذلك يجب بناء استراتيجية تسويقية تعتمد على التسويق بالمحتوى، حملات البريد الإلكتروني (Mailchimp)، وإدارة الإعلانات المدفوعة عبر منصات التواصل الاجتماعي.</p>
+      <h2 id="metrics">الإطلاق وقياس الأداء</h2>
+      <p>الإطلاق ليس نهاية المشروع؛ هو بداية التعلم الحقيقي من المستخدمين. لذلك نستخدم KPIs لمعرفة هل المنتج يحقق هدفه.</p>
+      <ul>
+        <li><strong>Activation Rate:</strong> نسبة المستخدمين الذين أكملوا أول خطوة مهمة.</li>
+        <li><strong>Retention Rate:</strong> نسبة من يعودون لاستخدام المنتج.</li>
+        <li><strong>Conversion Rate:</strong> نسبة من ينتقلون من خطوة إلى نتيجة مطلوبة.</li>
+        <li><strong>Task Success Rate:</strong> نسبة المستخدمين الذين أنجزوا المهمة بنجاح.</li>
+      </ul>
+      <pre><code>معدل التحويل = عدد من أكملوا التسجيل / عدد من بدأوا التسجيل * 100
+إذا بدأ 200 طالب التسجيل وأكمله 150:
+معدل التحويل = 150 / 200 * 100 = 75%</code></pre>
+      <div class="task"><strong>تدريب:</strong> اختر مشكلة من بيئة الكلية، ثم اكتب Persona، وMVP من ثلاث ميزات، وWireframe نصي للشاشة الأولى، وKPI واحد لقياس النجاح.</div>
 
-            <h2 id="lec10">إطلاق المنتج ومتابعته</h2>
-            <p>أخيراً مرحلة النشر وتقييم الأداء. في هذه المرحلة يعتمد نجاح المنتج على قياس مؤشرات الأداء الحيوية (KPIs) مثل معدل الاحتفاظ بالمستخدمين ومعدل التحويل عبر أدوات قوية مثل <strong>Google Analytics</strong> و <strong>Hotjar</strong> لمراقبة تفاعل المستخدم بصرياً، وتحليل السلوك المستمر.</p>
+      <h2 id="sources">مصادر المادة</h2>
+      <ol class="sources">
+        <li><a href="https://scrumguides.org/scrum-guide.html">The Scrum Guide</a></li>
+        <li><a href="https://www.nngroup.com/articles/definition-user-experience/">Nielsen Norman Group: User Experience</a></li>
+        <li><a href="https://www.atlassian.com/agile/kanban">Atlassian Agile Coach: Kanban</a></li>
+        <li><a href="https://www.productplan.com/learn/product-planning/">ProductPlan: Product Planning Guide</a></li>
+      </ol>
+    </section>
+  </main>
 
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>جميع الحقوق محفوظة &copy; البوابة الأكاديمية للطلاب</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <footer>
+    <div class="container"><p>إعداد أكاديمي مبسط لطلاب كلية الحاسبات</p></div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

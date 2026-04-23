@@ -1,126 +1,181 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطوير التطبيقات 1 - البوابة الأكاديمية</title>
-    <meta name="description" content="ملخص مقرر تطوير التطبيقات 1: أساسيات الواجهات الأمامية.">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطوير التطبيقات 1 - الواجهة الأمامية</title>
+  <meta name="description" content="ملخص موسع لمادة تطوير التطبيقات 1 يشمل HTML وCSS وJavaScript والتصميم المتجاوب.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="header-title">البوابة الأكاديمية</div>
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="course-header">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">الرئيسية</a> <span>/</span> المقرر الدراسي
-            </div>
-            <h1>تطوير التطبيقات 1</h1>
-            <p class="course-subtitle">مقدمة في بناء واجهات المستخدم الأمامية (Front-End Development)</p>
-        </div>
+  <header>
+    <div class="container header-content">
+      <div class="header-title">البوابة الأكاديمية لطلاب الحاسبات</div>
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+      </ul>
     </div>
+  </header>
 
-    <main class="container content-wrapper">
-        <aside>
-            <div class="toc">
-                <h3>محتويات المقرر</h3>
-                <ul>
-                    <li><a href="#intro">مقدمة في الويب</a></li>
-                    <li><a href="#html">أساسيات هيكلة الصفحات (HTML)</a></li>
-                    <li><a href="#css">التصميم والتنسيق (CSS)</a></li>
-                    <li><a href="#js">التفاعل مع المستخدم (JavaScript)</a></li>
-                    <li><a href="#responsive">التصميم المتجاوب</a></li>
-                </ul>
-            </div>
-        </aside>
+  <section class="course-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">الرئيسية</a> / المقرر الدراسي</div>
+      <h1>تطوير التطبيقات 1</h1>
+      <p class="course-subtitle">أساسيات بناء الواجهة الأمامية: HTML وCSS وJavaScript والتصميم المتجاوب.</p>
+    </div>
+  </section>
 
-        <section class="course-content">
-            <h2 id="intro">مقدمة في الويب</h2>
-            <p>يعتبر الويب المنصة الأساسية في العصر الحديث لتقديم التطبيقات وتوصيل المعلومات. يتكون أي تطبيق ويب قياسي من جانبين: الواجهة الأمامية (Front-End) وهي ما يتفاعل معه المستخدم، والواجهة الخلفية (Back-End) المسؤولة عن معالجة البيانات.</p>
-            <p>يركز هذا المقرر حصراً على تقنيات الواجهة الأمامية والتي تشكل اللبنة الأساسية لأي مطور تطبيقات.</p>
-            
-            <div class="info-box">
-                <strong>ملاحظة هامة:</strong> تعمل المتصفحات (مثل Google Chrome و Safari) كمترجمات لهذه التقنيات، حيث تستقبل الملفات من الخادم وتقوم بعرضها للمستخدم بشكل مرئي.
-            </div>
+  <main class="container content-wrapper">
+    <aside>
+      <nav class="toc">
+        <h3>محتويات المادة</h3>
+        <ul>
+          <li><a href="#idea">فكرة المادة</a></li>
+          <li><a href="#webapp">تطبيق الويب</a></li>
+          <li><a href="#html">HTML</a></li>
+          <li><a href="#css">CSS</a></li>
+          <li><a href="#js">JavaScript</a></li>
+          <li><a href="#responsive">التصميم المتجاوب</a></li>
+          <li><a href="#practice">تطبيق وتدريب</a></li>
+          <li><a href="#sources">المصادر</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-            <h2 id="html">أساسيات هيكلة الصفحات (HTML)</h2>
-            <p>لغة ترميز النص الفائق (Hypertext Markup Language) هي البنية التحتية لأي صفحة ويب. تستخدم HTML سلسلة من العناصر (Tags) لتغليف أجزاء مختلفة من المحتوى لجعلها تبدو أو تتصرف بطريقة معينة.</p>
-            <h3>المكونات الأساسية</h3>
-            <ul>
-                <li><strong>العناوين (Headings):</strong> تستخدم لعناوين الأقسام الرئيسية والفرعية، من <code>h1</code> إلى <code>h6</code>.</li>
-                <li><strong>الفقرات (Paragraphs):</strong> عنصر <code>p</code> مخصص للنصوص الطويلة.</li>
-                <li><strong>الروابط (Links):</strong> عنصر <code>a</code> ينشئ روابط للانتقال بين الصفحات.</li>
-                <li><strong>التقسيمات (Divisions):</strong> عنصر <code>div</code> يستخدم كحاوية لتجميع العناصر معاً.</li>
-            </ul>
-            
-            <div class="info-box example">
-                <strong>مثال تطبيقي: الهيكل الأساسي</strong>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+    <section class="course-content">
+      <h2 id="idea">فكرة المادة</h2>
+      <p class="lead">تطوير التطبيقات 1 يركز على الواجهة الأمامية Front-End، أي الجزء الذي يراه المستخدم ويتفاعل معه داخل المتصفح. الهدف ليس حفظ أوامر متفرقة، بل فهم كيف تتعاون HTML وCSS وJavaScript لبناء تجربة قابلة للاستخدام.</p>
+      <div class="key-grid">
+        <div class="mini-card"><strong>HTML</strong><br>تبني هيكل الصفحة ومعناها.</div>
+        <div class="mini-card"><strong>CSS</strong><br>تحدد الشكل، الألوان، المسافات، والتخطيط.</div>
+        <div class="mini-card"><strong>JavaScript</strong><br>تضيف السلوك والتفاعل مع المستخدم.</div>
+        <div class="mini-card"><strong>Responsive Design</strong><br>يجعل الصفحة مناسبة للجوال والتابلت والكمبيوتر.</div>
+      </div>
+
+      <h2 id="webapp">ما هو تطبيق الويب؟</h2>
+      <p>تطبيق الويب هو برنامج يعمل من خلال المتصفح مثل نظام الجامعة، المتجر الإلكتروني، أو لوحة متابعة الدرجات. لا يحتاج المستخدم غالبا إلى تثبيت التطبيق، بل يفتح رابطا ويبدأ الاستخدام.</p>
+      <div class="definition"><strong>تعريف:</strong> تطبيق الويب نظام برمجي يتكون غالبا من واجهة أمامية تعرض البيانات للمستخدم، وواجهة خلفية تعالج البيانات وتحفظها.</div>
+      <div class="note"><strong>تقريب المفهوم:</strong> الواجهة الأمامية مثل صالة المطعم والقائمة التي يراها العميل، أما الواجهة الخلفية فهي المطبخ ونظام الطلبات. في نظام الجامعة، صفحة تسجيل الدخول Front-End، والتحقق من الرقم الجامعي في قاعدة البيانات Back-End.</div>
+
+      <h2 id="html">HTML: بناء هيكل الصفحة</h2>
+      <p>HTML ليست لغة برمجة كاملة، بل لغة ترميز تصف مكونات الصفحة: عنوان، فقرة، صورة، زر، نموذج، جدول، وغير ذلك. جودة HTML تؤثر على قابلية الوصول، محركات البحث، وسهولة صيانة المشروع.</p>
+      <ul>
+        <li><strong>Element:</strong> عنصر في الصفحة مثل <code>p</code> أو <code>button</code>.</li>
+        <li><strong>Tag:</strong> الوسم المستخدم لكتابة العنصر مثل <code>&lt;h1&gt;</code>.</li>
+        <li><strong>Attribute:</strong> خاصية تضيف معلومات للعنصر مثل <code>href</code> أو <code>class</code>.</li>
+        <li><strong>Semantic HTML:</strong> استخدام عناصر ذات معنى مثل <code>header</code> و<code>main</code> و<code>section</code>.</li>
+      </ul>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ar" dir="rtl"&gt;
 &lt;head&gt;
-    &lt;title&gt;تطبيق الويب الأول&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;نظام متابعة الطلاب&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;مرحبا بك في تطوير التطبيقات&lt;/h1&gt;
-    &lt;p&gt;هذه فقرة نصية بسيطة داخل صفحة الويب.&lt;/p&gt;
+  &lt;header&gt;
+    &lt;h1&gt;نظام متابعة الطلاب&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;قائمة الطلاب&lt;/h2&gt;
+      &lt;p&gt;يعرض هذا القسم أسماء الطلاب المسجلين في المقرر.&lt;/p&gt;
+      &lt;button&gt;إضافة طالب&lt;/button&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            </div>
 
-            <h2 id="css">التصميم والتنسيق (CSS)</h2>
-            <p>لغة أوراق الأنماط المتتالية (Cascading Style Sheets) هي المسؤولة عن المظهر الخارجي للصفحة. تستطيع من خلالها التحكم بالألوان، الخطوط، التباعد، ومواضع العناصر.</p>
-            <h3>الخواص الشائعة</h3>
-            <ul>
-                <li><strong>اللون (color):</strong> تحديد لون النص.</li>
-                <li><strong>الخلفية (background-color):</strong> تحديد لون أو صورة خلفية العنصر.</li>
-                <li><strong>الهوامش (margin & padding):</strong> التحكم في المسافات داخل وخارج إطار العنصر.</li>
-            </ul>
-
-            <div class="info-box example">
-                <strong>مثال تطبيقي: تطبيق الاستايل</strong>
-<pre><code>body {
-    background-color: #f4f4f9;
-    font-family: Arial, sans-serif;
+      <h2 id="css">CSS: تنسيق الصفحة</h2>
+      <p>CSS مسؤولة عن الشكل: الألوان، الخطوط، المسافات، أماكن العناصر، وحجمها على الشاشات المختلفة. تخيلها كقواعد الهوية البصرية للموقع.</p>
+      <div class="definition"><strong>Box Model:</strong> طريقة حساب مساحة العنصر: المحتوى، الحشو <code>padding</code>، الحدود <code>border</code>، والهوامش <code>margin</code>.</div>
+      <pre><code>body {
+  font-family: Arial, sans-serif;
+  background: #f6f8fb;
+  color: #172033;
 }
 
-h1 {
-    color: #002855;
-    text-align: center;
+.student-card {
+  background: white;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+button {
+  background: #0f766e;
+  color: white;
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 6px;
 }</code></pre>
-            </div>
 
-            <h2 id="js">التفاعل مع المستخدم (JavaScript)</h2>
-            <p>تستخدم لغة البرمجة JavaScript لجعل صفحات الويب ديناميكية وتفاعلية. يمكنها تغيير محتوى HTML أو أنماط CSS بناءً على أفعال المستخدم، مثل النقر على زر أو تعبئة نموذج.</p>
-            <h3>مفهوم DOM</h3>
-            <p>يمثل نموذج كائن المستند (Document Object Model) بنية صفحة الويب على شكل شجرة. يمكن لـ JavaScript قراءة هذه الشجرة والتعديل عليها في الوقت الفعلي.</p>
-            
-            <div class="info-box example">
-                <strong>مثال تطبيقي: تغيير محتوى عنصر</strong>
-<pre><code>// التأشير على عنصر وتغيير النص الموجود بداخله
-let titleElement = document.querySelector('h1');
-titleElement.textContent = "تم تغيير النص بواسطة جافا سكربت";</code></pre>
-            </div>
+      <h2 id="js">JavaScript: إضافة التفاعل</h2>
+      <p>JavaScript تجعل الصفحة تتفاعل مع المستخدم: عند الضغط على زر، تعبئة نموذج، إظهار رسالة، إخفاء عنصر، أو جلب بيانات من الخادم.</p>
+      <ul>
+        <li><strong>DOM:</strong> تمثيل صفحة HTML كأنها شجرة يمكن للغة JavaScript التعامل معها.</li>
+        <li><strong>Event:</strong> حدث يحصل في الصفحة مثل <code>click</code> أو <code>input</code>.</li>
+        <li><strong>Function:</strong> مجموعة أوامر تنفذ عند الحاجة.</li>
+      </ul>
+      <pre><code>&lt;button id="saveBtn"&gt;حفظ&lt;/button&gt;
+&lt;p id="message"&gt;&lt;/p&gt;
 
-            <h2 id="responsive">التصميم المتجاوب (Responsive Design)</h2>
-            <p>نظراً لتعدد أحجام الشاشات التي يستخدمها الأشخاص (حواسيب مكتبية، أجهزة لوحية، هواتف ذكية)، أصبح التصميم المتجاوب مطلباً أساسياً.</p>
-            <ul>
-                <li><strong>استعلامات الوسائط (Media Queries):</strong> تستخدم في CSS لتطبيق أنماط مختلفة بناءً على عرض شاشة الجهاز.</li>
-                <li><strong>الشبكات المرنة (Flexbox & Grid):</strong> تقنيات تتيح ترتيب العناصر بشكل مرن يملأ المساحات المتاحة بذكاء.</li>
-            </ul>
-        </section>
-    </main>
+&lt;script&gt;
+  const saveBtn = document.querySelector("#saveBtn");
+  const message = document.querySelector("#message");
 
-    <footer>
-        <div class="container">
-            <p>جميع الحقوق محفوظة &copy; البوابة الأكاديمية للطلاب</p>
-        </div>
-    </footer>
+  saveBtn.addEventListener("click", function () {
+    message.textContent = "تم حفظ بيانات الطالب بنجاح";
+  });
+&lt;/script&gt;</code></pre>
+
+      <h2 id="responsive">التصميم المتجاوب</h2>
+      <p>التصميم المتجاوب يعني أن الصفحة تعمل بشكل جيد على الجوال والتابلت والكمبيوتر، دون أن يضطر المستخدم إلى التكبير أو السحب أفقيا.</p>
+      <div class="note"><strong>قاعدة عملية:</strong> ابدأ بتصميم بسيط يعمل على الجوال، ثم وسعه للشاشات الكبيرة. هذه الطريقة تسمى Mobile First.</div>
+      <pre><code>.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+
+      <h2 id="practice">مثال تطبيقي وتدريب</h2>
+      <div class="example">
+        <strong>مثال:</strong> بطاقة طالب تظهر الاسم والتخصص وزر حالة التسجيل.
+        <pre><code>&lt;article class="student-card"&gt;
+  &lt;h2&gt;أحمد محمد&lt;/h2&gt;
+  &lt;p&gt;التخصص: علوم الحاسب&lt;/p&gt;
+  &lt;button id="statusBtn"&gt;عرض الحالة&lt;/button&gt;
+  &lt;p id="statusText"&gt;&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;script&gt;
+  document.querySelector("#statusBtn").addEventListener("click", () =&gt; {
+    document.querySelector("#statusText").textContent = "الحالة: مسجل في المقرر";
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+      <div class="task"><strong>تدريب:</strong> صمم صفحة "لوحة مقرراتي" تحتوي على ثلاث بطاقات لمقررات دراسية، وزر داخل كل بطاقة يظهر رسالة باسم المقرر، واجعل البطاقات متجاوبة مع الجوال.</div>
+
+      <h2 id="sources">مصادر المادة</h2>
+      <ol class="sources">
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs: HTML</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN Web Docs: CSS</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN Web Docs: JavaScript Guide</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design">MDN Learn: Responsive Design</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container"><p>إعداد أكاديمي مبسط لطلاب كلية الحاسبات</p></div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

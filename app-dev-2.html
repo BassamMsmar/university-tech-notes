@@ -1,122 +1,161 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطوير التطبيقات 2 - البوابة الأكاديمية</title>
-    <meta name="description" content="دليل الطالب للانطلاقة في تطوير تطبيقات الويب باستخدام البنية التحتية Backend وإطار عمل Django.">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطوير التطبيقات 2 - Django والواجهة الخلفية</title>
+  <meta name="description" content="ملخص موسع لمادة تطوير التطبيقات 2 باستخدام Python وDjango وقواعد البيانات.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="header-title">البوابة الأكاديمية</div>
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="course-header">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">الرئيسية</a> <span>/</span> المقرر الدراسي
-            </div>
-            <h1>تطوير التطبيقات 2</h1>
-            <p class="course-subtitle">تطوير تطبيقات الويب باستخدام إطار عمل Django (الواجهة الخلفية)</p>
-        </div>
+  <header>
+    <div class="container header-content">
+      <div class="header-title">البوابة الأكاديمية لطلاب الحاسبات</div>
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+      </ul>
     </div>
+  </header>
 
-    <main class="container content-wrapper">
-        <aside>
-            <div class="toc">
-                <h3>محتويات المقرر</h3>
-                <ul>
-                    <li><a href="#intro">مقدمة في الواجهة الخلفية</a></li>
-                    <li><a href="#git">التحكم بالإصدارات (Git)</a></li>
-                    <li><a href="#venv">البيئة الافتراضية</a></li>
-                    <li><a href="#django">لماذا Django ومميزاته</a></li>
-                    <li><a href="#mvt">آلية عمل Django (MVT)</a></li>
-                    <li><a href="#db">قاعدة البيانات وإدارة النظام</a></li>
-                </ul>
-            </div>
-        </aside>
+  <section class="course-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">الرئيسية</a> / المقرر الدراسي</div>
+      <h1>تطوير التطبيقات 2</h1>
+      <p class="course-subtitle">تطوير الواجهة الخلفية باستخدام Python وDjango: من الطلب إلى قاعدة البيانات ثم الاستجابة.</p>
+    </div>
+  </section>
 
-        <section class="course-content">
-            <h2 id="intro">مقدمة في الواجهة الخلفية (Back-End)</h2>
-            <p>كما تم دراسته في المقرر السابق، تتكون تطبيقات الويب من واجهة أمامية (Front-End) وواجهة خلفية (Back-End). الواجهة الخلفية هي الجزء الذي لا يراه المستخدم، ولكنه العصب الأساسي الذي يقوم بمعالجة البيانات وتخزينها وتأمينها.</p>
-            
-            <div class="info-box example">
-                <strong>مثال واقعي:</strong> عند تسجيل الدخول إلى موقع الجامعة، الواجهة الأمامية هي النموذج الذي تكتب فيه الرقم الجامعي وكلمة المرور، أما الواجهة الخلفية فهي النظام الذي يتحقق من صحة هذه البيانات في قاعدة البيانات ويمنحك حق الدخول.
-            </div>
+  <main class="container content-wrapper">
+    <aside>
+      <nav class="toc">
+        <h3>محتويات المادة</h3>
+        <ul>
+          <li><a href="#idea">فكرة المادة</a></li>
+          <li><a href="#backend">الواجهة الخلفية</a></li>
+          <li><a href="#git">Git وGitHub</a></li>
+          <li><a href="#venv">البيئة الافتراضية</a></li>
+          <li><a href="#django">Django</a></li>
+          <li><a href="#mvt">معمارية MVT</a></li>
+          <li><a href="#code">أمثلة كود</a></li>
+          <li><a href="#sources">المصادر</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-            <h2 id="git">التحكم بالإصدارات (Git و GitHub)</h2>
-            <p>يعتبر <strong>Git</strong> نظاماً للتحكم بالإصدارات يُستخدم لحفظ تاريخ وتطور المشروع، بحيث يمكن للمطور الرجوع إلى أي نسخة سابقة. أما <strong>GitHub</strong> فهو المنصة السحابية التي يتم رفع المشروع عليها للتعاون أو حفظه على الإنترنت.</p>
-            <ul>
-                <li><strong>Git:</strong> يمثل زر الانقاذ (حفظ) المستمر لتغيرات الشفرة المصدرية.</li>
-                <li><strong>GitHub:</strong> يمثل الخزنة السحابية التي تحمي المشروع وتشاركه.</li>
-            </ul>
-            
-            <h3>الأوامر الأساسية:</h3>
-            <pre><code>git init              // لإنشاء مستودع جديد في المشروع
-git add .             // لإضافة كافة الملفات والتعديلات
-git commit -m "msg"   // لتوثيق وحفظ التغييرات
-git push              // لرفع التغييرات إلى الخادم السحابي</code></pre>
+    <section class="course-content">
+      <h2 id="idea">فكرة المادة</h2>
+      <p class="lead">تطوير التطبيقات 2 ينتقل من واجهة المستخدم إلى الواجهة الخلفية Back-End. هنا يتعلم الطالب كيف يستقبل الخادم الطلبات، يعالجها، يتعامل مع قاعدة البيانات، ثم يرجع النتيجة للمتصفح.</p>
 
-            <h2 id="venv">البيئة الافتراضية (Virtual Environment)</h2>
-            <p>البيئة الافتراضية (venv) هي مساحة عمل معزولة لكل مشروع برمجي، تضمن عدم تداخل المكتبات وإصداراتها بين المشاريع المختلفة على نفس الجهاز.</p>
-            <p>على سبيل المثال، إذا كان لديك مشروع يستخدم Django إصدار 3 ومشروع آخر يستخدم الإصدار 5، ستحدث تعارضات إن لم يتم عزل كل مشروع ببيئته الخاصة.</p>
-            
-            <h3>أوامر البيئة الافتراضية:</h3>
-            <pre><code>python -m venv venv  // إنشاء بيئة افتراضية جديدة باسم venv
-venv\Scripts\activate // تفعيل البيئة (في نظام ويندوز)
-deactivate           // إيقاف عمل البيئة الافتراضية</code></pre>
+      <h2 id="backend">ما هي الواجهة الخلفية؟</h2>
+      <p>الواجهة الخلفية هي الجزء الذي لا يراه المستخدم، لكنه يقرر ماذا يحدث خلف الشاشة: التحقق من تسجيل الدخول، حفظ البيانات، قراءة السجلات، إرسال البريد، وتطبيق قواعد الصلاحيات.</p>
+      <div class="note"><strong>تقريب المفهوم:</strong> في المتجر الإلكتروني يضغط المستخدم "شراء" في الواجهة الأمامية، لكن الواجهة الخلفية تتحقق من المخزون، تحسب السعر، تحفظ الطلب، ثم ترسل النتيجة.</div>
+      <div class="definition"><strong>API:</strong> واجهة تواصل بين الأنظمة. الواجهة الأمامية تطلب بيانات من API، والخادم يرجع استجابة مثل JSON أو صفحة HTML.</div>
 
-            <h2 id="django">لماذا Django ومميزاته؟</h2>
-            <p>إطار <strong>Django</strong> هو إطار عمل بلغة Python جاهز ومزود بأدوات قوية تساعد على بناء تطبيقات الويب بسرعة وموثوقية.</p>
-            <ul>
-                <li><strong>يقلل كتابة الكود:</strong> يوفر حلولاً جاهزة للمشاكل الشائعة.</li>
-                <li><strong>عالي الأمان:</strong> يحمي التطبيق تلقائياً من العديد من الثغرات الأمنية مثل حقن قواعد البيانات.</li>
-                <li><strong>لوحة تحكم إدارية:</strong> يقوم بتوليد لوحة تحكم كاملة وجاهزة فورياً لإدارة محتوى الموقع.</li>
-            </ul>
-            <p>شركات عالمية تعتمد على إطار Django في بنيتها التحتية مثل <strong>Instagram</strong> و <strong>Pinterest</strong>.</p>
+      <h2 id="git">Git وGitHub</h2>
+      <p>Git يحفظ تاريخ المشروع. GitHub يستضيف المشروع على الإنترنت لتسهيل المشاركة والعمل الجماعي. استخدم Commit لوصف خطوة واضحة لا لحفظ عشوائي.</p>
+      <pre><code>git init
+git add .
+git commit -m "initial version"
+git status
+git log --oneline
+git push</code></pre>
 
-            <h2 id="mvt">آلية عمل Django وتنظيم الملفات</h2>
-            <p>يتكون المشروع في Django من مشروع رئيسي يضم إعدادات النظام، ويحتوي على عدة تطبيقات فرعية صغيرة (Apps) كل منها ينجز مهمة محددة.</p>
-            
-            <h3>معمارية MVT (Model - View - Template)</h3>
-            <p>يعتمد إطار Django على هيكلية تنظيمية تفصل مكونات التطبيق كالتالي:</p>
-            <ul>
-                <li><strong>Model (النموذج):</strong> المكون المسؤول عن تمثيل البيانات المهيكلة والتعامل مع قاعدة البيانات.</li>
-                <li><strong>View (العرض):</strong> المكون الذي يحتوي على المنطق البرمجي، فهو يستقبل طلب المستخدم ويعالج البيانات عبر استدعاء النموذج المناسب.</li>
-                <li><strong>Template (القالب):</strong> يمثل ملفات HTML المسؤولة عن عرض واجهة المستخدم النهائية بعد تمرير البيانات إليها.</li>
-                <li><strong>URL (المسارات):</strong> نظام التوجيه الذي يربط الرابط المطلوب بدالة الـ View المناسبة.</li>
-            </ul>
+      <h2 id="venv">البيئة الافتراضية venv</h2>
+      <p>البيئة الافتراضية تعزل مكتبات كل مشروع. إذا كان لديك مشروع يستخدم Django 4 وآخر يستخدم Django 6، فلا يحدث تعارض بينهما.</p>
+      <pre><code>python -m venv .venv
+.venv\Scripts\activate
+pip install django
+deactivate</code></pre>
+      <div class="note"><strong>تشبيه:</strong> البيئة الافتراضية مثل حقيبة مستقلة لكل مقرر؛ أدوات مقرر قواعد البيانات لا تختلط بأدوات مقرر الشبكات.</div>
 
-            <h2 id="db">قاعدة البيانات وإدارة النظام</h2>
-            <h3>قاعدة البيانات SQLite3</h3>
-            <p>يأتي Django محملاً بقاعدة بيانات <strong>SQLite3</strong> افتراضياً. تتميز بكونها ملفية ولا تحتاج إلى برنامج تثبيت خوادم معقدة، مما يجعلها مثالية لبيئة التطوير والتعلم.</p>
-            
-            <h3>حساب المدير (Superuser)</h3>
-            <p>للدخول إلى النظام كمستخدم إداري بكامل الصلاحيات، يتم إنشاء هذا الحساب باستخدام أمر برمجي. هذا الحساب يستطيع التحكم الكامل بالبيانات والمستخدمين من خلال لوحة تحكم Django الجاهزة.</p>
-            
-            <div class="info-box example">
-                <strong>أوامر Django الهامة:</strong>
-<pre><code>django-admin startproject projectname // لإنشاء مشروع جديد
-python manage.py startapp appname     // لإنشاء تطبيق فرعي
-python manage.py makemigrations       // لتسجيل تغييرات قاعدة البيانات
-python manage.py migrate              // لتطبيق التغييرات على قاعدة البيانات
-python manage.py createsuperuser      // لإنشاء مدير نظام
-python manage.py runserver            // لتشغيل السيرفر ورؤية النتيجة</code></pre>
-            </div>
-            
-        </section>
-    </main>
+      <h2 id="django">لماذا Django؟</h2>
+      <p>Django إطار عمل Web Framework بلغة Python يساعدنا على بناء تطبيقات ويب بسرعة وبشكل منظم. يوفر نظام مسارات، تعامل مع قاعدة البيانات، لوحة إدارة، حماية أمنية، ونظام قوالب.</p>
+      <div class="key-grid">
+        <div class="mini-card"><strong>Project</strong><br>الحاوية الكبرى لإعدادات الموقع.</div>
+        <div class="mini-card"><strong>App</strong><br>جزء مستقل مثل الطلاب أو المقررات.</div>
+        <div class="mini-card"><strong>ORM</strong><br>تعامل مع قاعدة البيانات باستخدام Python.</div>
+        <div class="mini-card"><strong>Admin</strong><br>لوحة إدارة جاهزة للبيانات.</div>
+      </div>
+      <pre><code>django-admin startproject university
+cd university
+python manage.py startapp students
+python manage.py runserver</code></pre>
 
-    <footer>
-        <div class="container">
-            <p>جميع الحقوق محفوظة &copy; البوابة الأكاديمية للطلاب</p>
-        </div>
-    </footer>
+      <h2 id="mvt">معمارية MVT في Django</h2>
+      <p>Django يستخدم نمط Model-View-Template. الفكرة الأساسية هي فصل البيانات عن منطق المعالجة عن طريقة العرض.</p>
+      <table>
+        <thead>
+          <tr><th>المكون</th><th>دوره</th><th>مثال في نظام جامعة</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Model</td><td>تمثيل البيانات</td><td>جدول الطلاب</td></tr>
+          <tr><td>View</td><td>استقبال الطلب واتخاذ القرار</td><td>عرض بيانات طالب</td></tr>
+          <tr><td>Template</td><td>إظهار HTML للمستخدم</td><td>صفحة ملف الطالب</td></tr>
+          <tr><td>URL</td><td>ربط الرابط بالدالة</td><td><code>/students/</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="code">أمثلة كود</h2>
+      <h3>Model لطالب</h3>
+      <pre><code>from django.db import models
+
+
+class Student(models.Model):
+    name = models.CharField(max_length=120)
+    university_id = models.CharField(max_length=20, unique=True)
+    major = models.CharField(max_length=80)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.university_id}"</code></pre>
+      <pre><code>python manage.py makemigrations
+python manage.py migrate</code></pre>
+
+      <h3>View وURL</h3>
+      <pre><code># students/views.py
+from django.http import HttpResponse
+
+
+def student_home(request):
+    return HttpResponse("مرحبا بك في نظام الطلاب")</code></pre>
+      <pre><code># students/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("", views.student_home, name="student_home"),
+]</code></pre>
+      <pre><code># university/urls.py
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("students/", include("students.urls")),
+]</code></pre>
+
+      <h3>لوحة الإدارة</h3>
+      <pre><code>from django.contrib import admin
+from .models import Student
+
+admin.site.register(Student)</code></pre>
+      <pre><code>python manage.py createsuperuser</code></pre>
+
+      <div class="task"><strong>تدريب:</strong> أنشئ تطبيق Django باسم <code>courses</code> يحتوي على Model باسم <code>Course</code> فيه <code>title</code> و<code>code</code> و<code>credit_hours</code>، ثم سجله في لوحة الإدارة.</div>
+
+      <h2 id="sources">مصادر المادة</h2>
+      <ol class="sources">
+        <li><a href="https://docs.djangoproject.com/">Django Documentation</a></li>
+        <li><a href="https://docs.python.org/3/library/venv.html">Python venv Documentation</a></li>
+        <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a></li>
+        <li><a href="https://sqlite.org/docs.html">SQLite Documentation</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container"><p>إعداد أكاديمي مبسط لطلاب كلية الحاسبات</p></div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

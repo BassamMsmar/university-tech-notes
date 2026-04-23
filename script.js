@@ -1,6 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.course-content h2');
     const navLinks = document.querySelectorAll('.toc ul li a');
+    const printButtons = document.querySelectorAll('[data-print-page], [data-download-pdf]');
+    const resultButtons = document.querySelectorAll('[data-result-modal]');
+    const resultModal = document.querySelector('#resultModal');
+    const closeModalButtons = document.querySelectorAll('[data-close-modal]');
+
+    printButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            window.print();
+        });
+    });
+
+    resultButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (resultModal) {
+                resultModal.hidden = false;
+            }
+        });
+    });
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (resultModal) {
+                resultModal.hidden = true;
+            }
+        });
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && resultModal && !resultModal.hidden) {
+            resultModal.hidden = true;
+        }
+    });
 
     if (!sections.length || !navLinks.length) return;
 
